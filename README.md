@@ -1,4 +1,4 @@
-# Iris
+# Iris Flowers Classification
 
 In this project we perform classification using different machine learning algorithms on the classical Iris Dataset.
 This dataset is one of the earliest used to evaluate classification algorithms, and was provided by R. A. Fischer.
