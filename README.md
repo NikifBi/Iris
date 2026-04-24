@@ -76,4 +76,12 @@ Despite similar performance, simpler models (e.g., Logistic Regression, KNN) are
 - Differences between models are minimal
 - Results may not generalize to more complex, real-world datasets
 
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/NikifBi/Iris.git
+cd iris-classification
+
 
