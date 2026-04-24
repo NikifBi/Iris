@@ -84,4 +84,13 @@ Clone the repository:
 git clone https://github.com/NikifBi/Iris.git
 cd Iris
 
+pip install -r requirements.txt
+```
 
+## Usage
+
+Run the Jupyter notebook:
+
+```bash
+jupyter notebook notebooks/iris_jup.ipynb
+```
