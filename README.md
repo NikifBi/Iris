@@ -82,6 +82,6 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/NikifBi/Iris.git
-cd iris-classification
+cd Iris
 
 
