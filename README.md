@@ -1,6 +1,6 @@
 # Iris Flowers Classification
 
-This project presents a complete machine learning workflow applied to the classic Iris dataset. The goal is to classify iris flowers into three species based on their physical characteristics.
+This project presents a complete machine learning workflow applied to the classical Iris dataset. The goal is to classify iris flowers into three species based on their physical characteristics.
 
 The project includes:
 - Data preprocessing and cleaning
