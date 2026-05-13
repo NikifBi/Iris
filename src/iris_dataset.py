@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np 
 import matplotlib.pyplot as plt
 import seaborn as sns
-from data_loader_iris import load_data
+from src.data_loader_iris import load_data
 import time
 from functools import wraps
 
