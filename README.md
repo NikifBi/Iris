@@ -1,66 +1,87 @@
 # Iris Flowers Classification
 
-This project presents a complete machine learning workflow applied to the classical Iris dataset. The goal is to classify iris flowers into three species based on their physical characteristics.
+A Python project demonstrating a machine learning workflow on the classical Iris dataset. This repository includes data loading, model training, hyperparameter tuning, and visualization code for six classifiers.
 
-The project includes:
-- Data preprocessing and cleaning
-- Exploratory Data Analysis (EDA)
-- Feature selection
-- Model training and hyperparameter tuning
-- Performance evaluation and comparison
+## Project Overview
 
-Several classification algorithms are implemented and compared, including both simple and advanced models.
+The goal is to classify iris flower samples into three species using physical measurements.
+
+Key features:
+- Custom data loader for the Iris dataset
+- Train/test split with stratified sampling
+- Pipeline-based model tuning for robust preprocessing
+- Hyperparameter optimization using `GridSearchCV` and `RandomizedSearchCV`
+- Decision boundary and confusion matrix visualization support
+
+## Repository Structure
+
+- `data/`
+  - `iris.data` — Iris dataset CSV file
+  - `data_info.txt` — Dataset metadata and reference information
+- `notebook/`
+  - `iris_jup.ipynb` — Jupyter notebook for exploration and analysis
+- `src/`
+  - `data_loader_iris.py` — CSV loader and class label mapping
+  - `iris_dataset.py` — classifier pipelines, tuning routines, and plotting helpers
+- `requirements.txt` — dependencies for the project
+
+> Note: `iris_dataset.py` contains reusable training and visualization utilities derived from the notebook workflow.
+
+## Installation
+
+From the repository root:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+If you use a virtual environment, activate it before installing.
+
+## Usage
+
+Open the Jupyter notebook:
+
+```bash
+jupyter notebook notebook/iris_jup.ipynb
+
+```
 
 ## Dataset
 
-The dataset used is the Iris dataset from the UCI Machine Learning Repository:
+This project uses the Iris dataset from the UCI Machine Learning Repository:
 https://archive.ics.uci.edu/dataset/53/iris
 
-It contains:
+Dataset details:
 - 150 samples
-- 4 features:
+- 4 input features:
   - Sepal Length
   - Sepal Width
   - Petal Length
   - Petal Width
-- 3 classes:
-  - Setosa
-  - Versicolor
-  - Virginica
+- 3 target classes:
+  - Iris-setosa
+  - Iris-versicolor
+  - Iris-virginica
 
-Two known incorrect entries in the dataset were corrected based on the original publication by R. A. Fisher.
+The dataset is stored locally in `data/iris.data` and is loaded by `src/data_loader_iris.py`.
 
-## Methodology
+## Models and Training
 
-The workflow follows standard machine learning practices:
+`src/iris_dataset.py` contains training and tuning logic for the following classifiers:
+- K-Nearest Neighbors (`KNeighborsClassifier`)
+- Support Vector Machine (`SVC`)
+- Logistic Regression (`LogisticRegression`)
+- Random Forest (`RandomForestClassifier`)
+- Multi-layer Perceptron (`MLPClassifier`)
+- XGBoost (`XGBClassifier`)
 
-1. Data preprocessing and validation
-2. Exploratory Data Analysis (EDA)
-3. Train-test split (stratified)
-4. Feature selection using Chi-Squared test
-5. Model training 
-6. Hyperparameter tuning via cross-validation
-7. Final evaluation on test data
+The notebook is the primary work in this project; `src/iris_dataset.py` holds a crude form of the notebook code for reference and reuse.
 
-Feature selection reduced the dataset to the two most informative features:
-- Petal Length
-- Petal Width
+All models are trained on the two features used in the notebook and script:
+- `Petal Length`
+- `Petal Width`
 
-## Models
-
-The following models were implemented and compared:
-
-- DummyClassifier (baseline)
-- K-Nearest Neighbors (KNN)
-- Support Vector Machine (SVC)
-- Logistic Regression
-- Random Forest
-- Multi-layer Perceptron (MLP)
-- XGBoost
-
-Hyperparameters were optimized using GridSearchCV and RandomizedSearchCV.
-
-## Results
+## Evaluation Results
 
 - All trained models significantly outperform the baseline DummyClassifier (~33% accuracy)
 - Several models achieve near-perfect classification performance
@@ -72,25 +93,12 @@ Despite similar performance, simpler models (e.g., Logistic Regression, KNN) are
 
 ## Limitations
 
-- The dataset is small and highly structured
+- The dataset is small and well-separated, so high accuracy is expected for many classifiers.
 - Differences between models are minimal
 - Results may not generalize to more complex, real-world datasets
+- The project focuses on model tuning and evaluation rather than on a production-ready pipeline.
+ 
 
-## Installation
 
-Clone the repository:
 
-```bash
-git clone https://github.com/NikifBi/Iris.git
-cd Iris
 
-pip install -r requirements.txt
-```
-
-## Usage
-
-Run the Jupyter notebook:
-
-```bash
-jupyter notebook notebooks/iris_jup.ipynb
-```
