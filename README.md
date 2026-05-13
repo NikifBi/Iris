@@ -92,5 +92,5 @@ pip install -r requirements.txt
 Run the Jupyter notebook:
 
 ```bash
-jupyter notebook notebooks/iris_jup.ipynb
+jupyter notebook notebook/iris_jup.ipynb
 ```
